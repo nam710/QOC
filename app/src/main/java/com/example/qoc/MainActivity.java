@@ -1,17 +1,25 @@
 package com.example.qoc;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelStore;
+
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +28,22 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new HomeFragment());
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
 
                 case R.id.home:
+
                     replaceFragment(new HomeFragment());
+
                     break;
                 case R.id.feed:
+
                     replaceFragment(new FeedFragment());
                     break;
                 case R.id.post:
+
                     replaceFragment(new PostFragment());
                     break;
                 case R.id.institutes:
@@ -42,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
 
         });
+
+
 
 
     }

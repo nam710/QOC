@@ -3,10 +3,14 @@ package com.example.qoc;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +18,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class FeedFragment extends Fragment {
+
+    RecyclerView recyclerView;
+    ArrayList<FeedModel> holder;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +66,25 @@ public class FeedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feed, container, false);
+        View view = inflater.inflate(R.layout.fragment_feed,container,false);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        holder = new ArrayList<>();
+
+        FeedModel ob1 = new FeedModel("Naman Chawla","nam710","Hello!This is my first post!");
+        holder.add(ob1);
+        FeedModel ob2 = new FeedModel("Shashwat Gupta","stgpt","Hello!This is my first post!");
+        holder.add(ob2);
+        FeedModel ob3 = new FeedModel("Divyansh Singhal","ds001","Hello!This is my first post!");
+        holder.add(ob3);
+
+
+
+        recyclerView.setAdapter(new FeedRecyclerAdapter(holder));
+
+
+        return view;
+
+
     }
 }

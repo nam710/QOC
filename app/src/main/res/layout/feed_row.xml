@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/feedrow">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="10dp"
+        android:minHeight="120dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="120dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/pfp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:foreground="@drawable/ic_launcher_foreground"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"
+                app:strokeWidth="1dp" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="16sp"
+                android:layout_toRightOf="@+id/pfp"
+                android:text="UserName" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/username"
+                android:textSize="14sp"
+                android:id="@+id/userid"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@+id/pfp"
+                android:text="UserID" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:id="@+id/divider"
+                android:layout_below="@+id/pfp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider"
+                android:padding="5dp"
+                android:id="@+id/feedcontent"
+                android:text="Type your questions or answers here!"
+                android:minHeight="80dp"/>
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+</LinearLayout>
