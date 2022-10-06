@@ -2,6 +2,8 @@ package com.example.qoc;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -21,6 +25,7 @@ public class FeedFragment extends Fragment {
 
     RecyclerView recyclerView;
     ArrayList<FeedModel> holder;
+    FloatingActionButton fabHome;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,6 +73,7 @@ public class FeedFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_feed,container,false);
         recyclerView = view.findViewById(R.id.recyclerView);
+        fabHome = view.findViewById(R.id.home);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         holder = new ArrayList<>();
 
@@ -77,14 +83,21 @@ public class FeedFragment extends Fragment {
         holder.add(ob2);
         FeedModel ob3 = new FeedModel("Divyansh Singhal","ds001","Hello!This is my first post!");
         holder.add(ob3);
-
-
+        FeedModel ob4 = new FeedModel("Divyansh Singhal","ds001","Hello!This is my first post!");
+        holder.add(ob4);
+        FeedModel ob5 = new FeedModel("Shashwat Gupta","stgpt","Hello!This is my first post!");
+        holder.add(ob5);
+        FeedModel ob6 = new FeedModel("Naman Chawla","nam710","Hello!This is my first post!");
+        holder.add(ob6);
+        FeedModel ob7 = new FeedModel("Shashwat Gupta","stgpt","Hello!This is my first post!");
+        holder.add(ob7);
+        FeedModel ob8 = new FeedModel("Divyansh Singhal","ds001","Hello!This is my first post!");
+        holder.add(ob8);
 
         recyclerView.setAdapter(new FeedRecyclerAdapter(holder));
 
 
         return view;
-
-
     }
+
 }
