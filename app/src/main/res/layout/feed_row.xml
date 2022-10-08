@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/feedrow"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:id="@+id/feedrow">
+    app:cardUseCompatPadding="true"
+    app:cardElevation="4dp"
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="10dp"
-        android:minHeight="120dp">
+    app:cardPreventCornerOverlap="true"
+    android:minHeight="120dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:minHeight="120dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/pfp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:foreground="@drawable/ic_launcher_foreground"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
@@ -50,20 +53,23 @@
                 android:text="UserID" />
 
             <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:id="@+id/divider"
-                android:layout_below="@+id/pfp"
-                />
+                android:layout_below="@+id/pfp" />
 
             <TextView
+                android:id="@+id/feedcontent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divider"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/custom_card"
+                android:minHeight="80dp"
                 android:padding="5dp"
-                android:id="@+id/feedcontent"
-                android:text="Type your questions or answers here!"
-                android:minHeight="80dp"/>
+                android:text="Type your questions or answers here!" />
 
 
         </RelativeLayout>
@@ -73,4 +79,3 @@
 
 
 
-</LinearLayout>
