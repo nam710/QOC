@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
+
 import java.util.ArrayList;
 
 public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapter.myViewHolder> {
@@ -43,7 +45,7 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
     public class myViewHolder extends RecyclerView.ViewHolder {
 
         TextView usern,uid,content;
-        LinearLayout linearLayout;
+        MaterialCardView materialCardView;
 
 
         public myViewHolder(@NonNull View itemView) {
@@ -51,7 +53,7 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
             usern = itemView.findViewById(R.id.username);
             uid = itemView.findViewById(R.id.userid);
             content = itemView.findViewById(R.id.feedcontent);
-            linearLayout = itemView.findViewById(R.id.feedrow);
+            materialCardView = itemView.findViewById(R.id.feedrow);
         }
     }
 }
